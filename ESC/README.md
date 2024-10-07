@@ -88,20 +88,20 @@ This script collects the following information :
 - User : unchecked
 - All servers
 - NT AUTHORITY\Authenticated Users
-- DSONE\Organization Management
-- DSONE\Public Folder Management
-- DSONE\Delegated Setup
-- DSONE\Exchange Servers
-- DSONE\Exchange Trusted Subsystem
+-  Contoso\Organization Management
+-  Contoso\Public Folder Management
+-  Contoso\Delegated Setup
+-  Contoso\Exchange Servers
+-  Contoso\Exchange Trusted Subsystem
 - NT AUTHORITY\Authenticated Users
-- DSONE\Domain Admins
-- DSONE\Schema Admins
-- DSONE\Enterprise Admins
+-  Contoso\Domain Admins
+-  Contoso\Schema Admins
+-  Contoso\Enterprise Admins
 - NT AUTHORITY\SYSTEM
 - NT AUTHORITY\NETWORK SERVICE
-- DSONE\RTCComponentUniversalServices
-- DSONE\RTCUniversalServerAdmins
-- DSONE\Managed Availability Servers
+-  Contoso\RTCComponentUniversalServices
+-  Contoso\RTCUniversalServerAdmins
+-  Contoso\Managed Availability Servers
 - Everyone
 - NT AUTHORITY\ANONYMOUS LOGON
 - DAGEncryption
