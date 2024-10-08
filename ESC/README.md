@@ -80,7 +80,7 @@ This script collects the following information :
     - Mail Recipient : You should also pay attention to this role because it allows to give full access on every mailboxes
     - Ensure that scopes are used especially for Application Impersonation
     - If those roles need to be delegated, put a scope and monitor the group and the users with this delegation
-    - You should also review the custom delegations in order to 
+    - You should also review the custom delegations in order to :
       - Check if they are still needed
       - If they are scoped
       - If they can be reduced in terms of privileges
