@@ -71,7 +71,8 @@ To generate the Excel file :
 ## How to Analyse the Excel File
 
 This script collects the following information :
-**- MRA :**
+
+- **MRA :**
     - Collect all the assignment between management roles, group and their scope
     - Focus on role with high privileges : 
     - Impersonation
@@ -86,16 +87,16 @@ This script collects the following information :
       - If they can be reduced in terms of privileges
       - If you need to know what the default delegations are, the cmdlet and parameters associated with each role… Check thhe  the file Dump_RBAC_2019CU12-Sept22.xls ( this is not the latest information, but it can help). This file contains the default RBAC configuration for a new Exchange 2019 CU 12 organization.
     - Delegating Management role assignments have been removed
-**- MRCustom :**
+- **MRCustom** :**
     - Collect all the custom management roles with their scope
     - When custom roles are created this tab helps to check the parent role
-**- MRCustomDetails :** 
+- **MRCustomDetails :** 
     - Collect management roles' details
     - When custom roles are created this tab helps to check all the cmdlet and parameters that were kept in the role
-**- MRScope : **
+- **MRScope :**
     - Collect custom management scopes
     - Focus on scope which too wide, ex :  include all mailbox for a domain…
-**- AdminAuditLog :** 
+- **AdminAuditLog :** 
     - Collect information about the configuration of AdminAudit log
     - Check if the default settings have been altered
     - Focus on :
@@ -103,7 +104,7 @@ This script collects the following information :
       - AdminAuditLogCmdlets : should *
       - AdminAuditLogExcludedCmdlets : Should be empty
       - AdminAuditLogAgeLimit : should be at least 90 days
-**- ReceiveConnector :**
+- **ReceiveConnector :**
     - Collect information on Receive Connector 
     - Focus on AuthMechanism with ExternalAuthoritative. This means that this Receive connectors I Open Relay
     - Focus on Anonymous Authentication
@@ -112,30 +113,30 @@ This script collects the following information :
       - ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255 
     - subnet
     - Review the Tarpit
-**- SendConnector :** 
+- **SendConnector :** 
     - Collect information about Send Connector
     - Check TLS information
-**- RemoteDomain :**
+- **RemoteDomain :**
     - Collect all the Remote Domain and retrieve the value AutoForwardEnabled
     - Focus first on the DomainName * and check if the setting AutoForwardEnabled set to True. With this configuration any users can created Inbox rules to automatically forwarded any received message to a mailbox outside of the organization
     - Review all the Remote Domain with  AutoForwardEnabled set to True
-**- TransportRules :** 
+- **TransportRules :** 
     - Collect Transport Rule with one of these actions : BlindCopyTo, CopyTo, RedirectMessage
     - Review these Transport Rules and check if they are still accurate
     - Transport rules are used by attackers to automatically send message outside the organization
-**- JournalRules:**
+- **JournalRules:**
   - Collect Journal Rules
   - Review these Journal Rules
-**- MbxDBJournaling :** 
+- **MbxDBJournaling :** 
     - Collect the property JournalRecipient for all databases
     - Review the databases that have a JournalRecipient set
-**- MailboxDatabaseReceiveAs :** 
+- **MailboxDatabaseReceiveAs :** 
     - Collect ReceiveAs permissions on the database object
     - This permission set Full Access mailboxes for the user accounts on all mailboxes in the target database
-**- MailboxDatabaseSendAs :** 
+- **MailboxDatabaseSendAs :** 
     - Collect SendAs permissions on the database object
     - This permissions allow the user to have the permissions Send-As on all mailboxes in the target database
-**- PartConfPerm**
+- **PartConfPerm**
     - This tab shows the permssions on containers and servers object in the configuration partition where Exchange information are stored
     - The help with the analysis, and display non standard permissions
     - Add the following Filter :
@@ -159,26 +160,26 @@ This script collects the following information :
       - Contoso\Managed Availability Servers
       - Everyone
       - NT AUTHORITY\ANONYMOUS LOGON
-**- DAGEncryption**
+- **DAGEncryption**
     - Check the value NetworkEncryption and AutoDagBitlockerEnabled
     - Both value should be set to true
-**- POP :**
+- **POP :**
     - Collect POP
     - Focus on LogonType : Plaintext Authentication
     - Check servers where Pop is started
     - If PlainText authentication has been set, retrieve the list of mailboxes with POP enabled using the following command 
       - get-casmailbox -resultsize unlimited | ? {$_.PopEnabled -eq $true}
     - Remember that Pop should be disabled on all mailboxes except those which really need it. When a mailbox is created POP is enabled by default
-**- IMAP :**
+- **IMAP :**
     - Collect IMAP
     - Focus on LogonType : Plaintext Authentication
     - Check servers where IMAP is started
     - If PlainText authentication has been set, retrieve the list of mailboxes with POP enabled using the following command 
       - get-casmailbox -resultsize unlimited | ? {$_.ImapEnabled -eq $true}
       - Remember that IMAP should be disabled on all mailboxes except those which really need it. When a mailbox is created IMAP is enabled by default
-**- Kerberos** :
+- **Kerberos** :
     - Ensure that Kerberos is configured on all servers
-**- ExchGroup:** 
+- **ExchGroup:** 
     - Retrieve all the group in the OU "Microsoft Exchange Security Groups"
     - When nested group :
       - Retrieve all the members by checking all the nested groups in all domains in the forest
@@ -199,9 +200,9 @@ This script collects the following information :
     - Filter on PasswordLastSet to check accounts will a last password set greater that 1 year
     - Filter on LastLogonDateto check accounts will a LastLogonDate greater that 1 year month
     - The tab also showed if the account is enabled, has a mailbox and its DN
-**- ExchGroupCount**
+- **ExchGroupCount**
     - For each group check the total unique user that member of this group
-**- ADRootGrp**
+- **ADRootGrp**
     - Retrieve content of the group Enterprise Admins, Domain Admins and Administrators group, account Operators for the root domain and display their content
     - When nested group :
       - Retrieve all the members by checking all the nested group in all domains in the forest
@@ -216,12 +217,12 @@ This script collects the following information :
     - Filter on PasswordLastSet to check accounts will a last password set greater that 1 year
     - Filter on LastLogonDateto check accounts will a LastLogonDate greater that 1 year month
     - The tab also showed if the account is enabled, has a mailbox and its DN
-**- ADRootGrpCount**
+- **ADRootGrpCount**
     - For each group check the total unique user that member of this group
-**- ExchVersion**
+- **ExchVersion**
     - Show the Exchange Version
     - Check if the latest CU/SU is deployed
-**- SrvLocalAdmin:** 
+- **SrvLocalAdmin:** 
     - Retrieve the content of the Local Administrators group for all Exchange Servers
     - When nested group :
       - Retrieve all the members by checking all the nested group in all domains in the forest
@@ -245,30 +246,30 @@ This script collects the following information :
       - Domain Admins
       - Exchange Trusted Subsystem
       - Organization Management
-      **- The content NEEDS to be CONSISTENT on all servers**
+      - **The content NEEDS to be CONSISTENT on all servers**
       - Only the default content should be in the local Administrators goup
       - Recommendation : Use PivotTable
-**- SrvLocalAdminCount**
+- **SrvLocalAdminCount**
     - For each group check the total unique user that member of this group
-**- SMBv1**
+- **SMBv1**
     - Check if the SMBv1 feature in installed
     - Check if SMBv1 is disabled in the registed
-**- Services**
+- **Services**
     - For each server, retrieve the list of installed services
     - Check if some suspicious services are displayed
     - Check it the list of installed services is consistent
     - Recommendation : Use PivotTable
-**- Software :**
+- **Software :**
     - For each server, retrieve the list of installed software
     - No freeware/shareware or application not related to Exchange should be displayed
     - Check it the list of installed software is consistent
     - Recommendation : Use PivotTable
-**- ScheduledTask**
+- **ScheduledTask**
     - Retrieve all the Scheduled tasks for all Exchange servers
     - Check if scripts start with the System account
     - Check the user account uses to start the tasks
     - Check the location of the script and ensure that only Exchange Administrators have access to the script
-**- TLS**
+- **TLS**
     - Check the status of registry key related to TLS
     - SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client
     - SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server
@@ -287,24 +288,24 @@ This script collects the following information :
       - https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-tls-guidance-part-2-enabling-tls-1-2-and/ba-p/607761
       - Exchange Server TLS guidance Part 3: Turning Off TLS 1.0/1.1
       - https://techcommunity.microsoft.com/t5/exchange-team-blog/exchange-server-tls-guidance-part-3-turning-off-tls-1-0-1-1/ba-p/607898
-**- TransportAgent :** 
+- **TransportAgent :** 
     - Check if there is not an "odd" Transport Agent
-**- WFeatures**
+- **WFeatures**
     - Ensure if MSMQ is installed 
     - Exchange Server prerequisites, Exchange 2019 system requirements, Exchange 2019 requirements | Microsoft Learn
-**- OrganizationConfig :** 
+- **OrganizationConfig :** 
     - Collect information about the information
     - Check for example if MailTipsExternalRecipientsTipsEnabled has been enabled, if not I add low issue in the report and explain how it can be interested to have this parameter set. It force users to think about the content of their email
-**- TransportConfig :**
+- **TransportConfig :**
     - Retrieve some information regarding general transport configuration
     - Check if ShadowRedundancy is enabled
     - Check TLS information
-**- SendConnector :**
+- **SendConnector :**
     - Collect information about Send Connector
     - Check TLS information
-**- MRA_Delegating :** 
+- **MRA_Delegating :** 
     - Collect all the management roles with their scope
     - Focus on non standard delegating
-**- TransportPipeline :**
+- **TransportPipeline :**
     - Collect information about the Transport Pipeline for each server
     - Check if Transport Pipeline has been enabled and if yes for which mailbox
