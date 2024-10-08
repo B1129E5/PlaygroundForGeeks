@@ -23,7 +23,7 @@ To run the script :
     - Path : Path for the storage of the collected data 
       - If missing use the current folder \output
       - Specify \ at the end does not matter as the script will remove it
-      - If - Path is not specify the script will create a folder Output in the ESI folder and store all the collected files in this folder
+      - If - Path is not specify the script will create a folder Output in the ESC folder and store all the collected files in this folder
     - InputCSVPath: Path for the input config file
       - If missing, the script search the file in same directory than Script
     - DumpConfig
@@ -37,12 +37,12 @@ To run the script :
       - $True if the script run on an EDGE server
       - Default value : $False
     - Example
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output"
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output"
       - .\Get-ExchangeSecurityInfo.ps1
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\Output" -Inputcsvpath "C:\temp\temporaryCSVPath"
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -DumpConfig $False
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -QuickMode $true
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -DumpConfig $False -QuickMode $true
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\Output" -Inputcsvpath "C:\temp\temporaryCSVPath"
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -DumpConfig $False
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -QuickMode $true
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -DumpConfig $False -QuickMode $true
       - .\Get-ExchangeSecurityInfo.ps1  -edge $true
     - For Help
       - .\ GET-EXCHANGESECURITYINFO.PS1 -?
@@ -65,8 +65,8 @@ To generate the Excel file :
       - Default value : $False
 -Example : 
     - .\New-ExchangeSecurityInfoReport.PS1
-    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESI\Output
-    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESI\Output -DumpConfig $False
+    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESC\Output
+    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESC\Output -DumpConfig $False
 
 ## How to Analyse the Excel File
 
