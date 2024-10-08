@@ -10,14 +10,68 @@ For some tabs, a quick way to check the modifications could be to check the When
 
 
 ## How to collect
+To run the script :
+- Unzip the script on the any drive in a folder name ESC
+- Launch Exchange Management Shell in admin mode
+- If the Exchange Management Tools are not installed, use the script ExchRemoteConnect.ps1 to start a remote PowerShell session to an Exchange server
+- .\ExchRemoteConnect.ps1  -SRV SRVExchangeFQDN
+- Run the script
+- Get-ExchangeSecurityCollect.ps1
+  - Parameters:
+  - By default, no parameters are needed
+  - Parameters:
+    - Path : Path for the storage of the collected data 
+      - If missing use the current folder \output
+      - Specify \ at the end does not matter as the script will remove it
+      - If - Path is not specify the script will create a folder Output in the ESI folder and store all the collected files in this folder
+    - InputCSVPath: Path for the input config file
+      - If missing, the script search the file in same directory than Script
+    - DumpConfig
+      - $False to not run tests that dump Exchange configuration settings
+      - Default value : $true
+    - QuickMode
+      - $True to bypass all the tests that take time by connecting to servers
+      - Can useful when it is needed to dump Exchane Configuration stored in AD and the Exchange server are not available (Ransomware attack for example)
+      - Default value : $False
+    - EDGE
+      - $True if the script run on an EDGE server
+      - Default value : $False
+    - Example
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output"
+      - .\Get-ExchangeSecurityInfo.ps1
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\Output" -Inputcsvpath "C:\temp\temporaryCSVPath"
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -DumpConfig $False
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -QuickMode $true
+      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESI\output" -DumpConfig $False -QuickMode $true
+      - .\Get-ExchangeSecurityInfo.ps1  -edge $true
+    - For Help
+      - .\ GET-EXCHANGESECURITYINFO.PS1 -?
 
 ## How to generate the Excel file
-
+To generate the Excel file :
+- If Excel is not install on the machine where the collect was done :
+- Copy the folder ESC (source of the script and Output folder) on a secure machine where Excel is installed
+- Launch PowerShell
+- Launch the Cmllet New-ExchangeSecurityCollectReport.ps1 -path "path to the Output folder"
+- Parameters:
+    - -Path : Path for the storage of the collected data 
+    - If missing use \output folder in the same directory as script
+      - Specify \ at the end doesn't not matter as the script will remove it
+    - DumpConfig
+      - $False to not create Excel tab with Exchange configuration settings
+      - Default value : $True
+    - EDGE
+      - $True if the script was run on an EDGE server
+      - Default value : $False
+-Example : 
+    - .\New-ExchangeSecurityInfoReport.PS1
+    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESI\Output
+    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESI\Output -DumpConfig $False
 
 ## How to Analyse the Excel File
 
 This script collects the following information :
-**- MRA : **
+**- MRA :**
     - Collect all the assignment between management roles, group and their scope
     - Focus on role with high privileges : 
     - Impersonation
