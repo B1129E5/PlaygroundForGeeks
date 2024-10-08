@@ -72,7 +72,7 @@ To generate the Excel file :
 
 This script collects the following information :
 **- MRA :**
- - Collect all the assignment between management roles, group and their scope
+    - Collect all the assignment between management roles, group and their scope
     - Focus on role with high privileges : 
     - Impersonation
     - Mailbox search
