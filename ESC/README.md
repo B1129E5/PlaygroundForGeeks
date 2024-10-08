@@ -5,9 +5,9 @@ This project was renamed the 09/11/2022 from ESI - Exchange Security Information
 
 
 The goal of this document is to give an "How to" for :
-    - The collect
-    - The Excel file generation
-    - The explanation on how to analyze some security information collected by the script.
+- The collect
+- The Excel file generation
+- The explanation on how to analyze some security information collected by the script.
 
 ## How to collect
 To run the script :
