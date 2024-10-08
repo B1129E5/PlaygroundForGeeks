@@ -1,13 +1,13 @@
 # ESC
 Exchange Security Collect
-Script to collect Security information for Exchange OnPremises
-Project was renamed the 09/11/2022 from ESI - Exchange Security Information to ESC - Exchange Security Collect
+Script to collect Security information for Exchange OnPremises organization
+This project was renamed the 09/11/2022 from ESI - Exchange Security Information to ESC - Exchange Security Collect
 
 
-The goal of this document is to help in the analysis of information collected by the script.
-For some tabs, a quick way to check the modifications could be to check the WhenCreated and WhenChanged column when they are available.
-
-
+The goal of this document is to give an "How to" for :
+    - The collect
+    - The Excel file generation
+    - The explanation on how to analyze some security information collected by the script.
 
 ## How to collect
 To run the script :
@@ -70,7 +70,11 @@ To generate the Excel file :
 
 ## How to Analyse the Excel File
 
-This script collects the following information :
+This script collects information regarding security configuration and overal Exchange configuration.
+This section is focused on the security part. But remember that there is more than 70 tabs.
+So this script can also be used to collect configuration information about your servers and organization's configueation.
+
+For the Security part, for some tabs, a quick way to check the lastest modifications could be to check the WhenCreated and WhenChanged column when they are available.
 
 - **MRA :**
     - Collect all the assignment between management roles, group and their scope
