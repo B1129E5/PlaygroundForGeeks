@@ -108,17 +108,17 @@ This script collects the following information :
     - Collect information on Receive Connector 
     - Focus on AuthMechanism with ExternalAuthoritative. This means that this Receive connectors I Open Relay
     - Focus on Anonymous Authentication
-    - If Anonymous check the RemoteIPRanges
-      - Should not include ::
-      - ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255 
-    - subnet
+    - If Anonymous is checked, review the RemoteIPRanges
+      - Should not include : 
+        - ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff 0.0.0.0-255.255.255.255 
+      - Subnet
     - Review the Tarpit
 - **SendConnector :** 
     - Collect information about Send Connector
     - Check TLS information
 - **RemoteDomain :**
     - Collect all the Remote Domain and retrieve the value AutoForwardEnabled
-    - Focus first on the DomainName * and check if the setting AutoForwardEnabled set to True. With this configuration any users can created Inbox rules to automatically forwarded any received message to a mailbox outside of the organization
+    - Focus first on the DomainName * and check if the setting AutoForwardEnabled set to True. With this configuration any users can created Inbox rules to automatically forward any received messages to a mailbox outside of the organization
     - Review all the Remote Domain with  AutoForwardEnabled set to True
 - **TransportRules :** 
     - Collect Transport Rule with one of these actions : BlindCopyTo, CopyTo, RedirectMessage
@@ -183,7 +183,7 @@ This script collects the following information :
     - Retrieve all the group in the OU "Microsoft Exchange Security Groups"
     - When nested group :
       - Retrieve all the members by checking all the nested groups in all domains in the forest
-    - If groups for other forest, the content can't be retrieved
+    - If groups for other forests, the content can't be retrieved
     - MemberPath display in the imbrication path
     - Level displays the level of imbrication
       - 0 for the group that is currently reviewed
@@ -206,7 +206,7 @@ This script collects the following information :
     - Retrieve content of the group Enterprise Admins, Domain Admins and Administrators group, account Operators for the root domain and display their content
     - When nested group :
       - Retrieve all the members by checking all the nested group in all domains in the forest
-    - If groups for other forest, the content can't be retrieved
+    - If groups for other forests, the content can't be retrieved
     - MemberPath display all the group in the imbrication path
     - Level displays the level of imbrication
       - 0 for the group that is currently reviewed
@@ -226,7 +226,7 @@ This script collects the following information :
     - Retrieve the content of the Local Administrators group for all Exchange Servers
     - When nested group :
       - Retrieve all the members by checking all the nested group in all domains in the forest
-    - If groups for other forest, the content can't be retrieved
+    - If groups for other forests, the content can't be retrieved
     - MemberPath display all the group in the imbrication path
     - Level displays the level of imbrication
       - 0 for the group that is currently reviewed
