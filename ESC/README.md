@@ -87,7 +87,7 @@ This script collects the following information :
       - If they can be reduced in terms of privileges
       - If you need to know what the default delegations are, the cmdlet and parameters associated with each role… Check thhe  the file Dump_RBAC_2019CU12-Sept22.xls ( this is not the latest information, but it can help). This file contains the default RBAC configuration for a new Exchange 2019 CU 12 organization.
     - Delegating Management role assignments have been removed
-- **MRCustom** :**
+- **MRCustom :**
     - Collect all the custom management roles with their scope
     - When custom roles are created this tab helps to check the parent role
 - **MRCustomDetails :** 
