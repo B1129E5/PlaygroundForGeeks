@@ -297,7 +297,7 @@ For the Security part, for some tabs, a quick way to check the lastest modificat
 - **TransportAgent :** 
     - Check if there is not an "odd" Transport Agent
 - **WFeatures**
-    - Ensure if MSMQ is installed 
+    - Ensure if MSMQ is not installed 
     - Exchange Server prerequisites, Exchange 2019 system requirements, Exchange 2019 requirements | Microsoft Learn
 - **OrganizationConfig :** 
     - Collect information about the information
