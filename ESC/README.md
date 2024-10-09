@@ -39,15 +39,15 @@ To run the script :
       - $True if the script run on an EDGE server
       - Default value : $False
     - Example
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output"
-      - .\Get-ExchangeSecurityInfo.ps1
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\Output" -Inputcsvpath "C:\temp\temporaryCSVPath"
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -DumpConfig $False
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -QuickMode $true
-      - .\Get-ExchangeSecurityInfo.ps1 - Path "C:\ESC\output" -DumpConfig $False -QuickMode $true
-      - .\Get-ExchangeSecurityInfo.ps1  -edge $true
+      - .\Get-ExchangeSecurityCollect.ps1 - Path "C:\ESC\output"
+      - .\Get-ExchangeSecurityCollect.ps1
+      - .\Get-ExchangeSecurityCollect.ps1 - Path "C:\ESC\Output" -Inputcsvpath "C:\temp\temporaryCSVPath"
+      - .\Get-ExchangeSecurityCollect.ps1 - Path "C:\ESC\output" -DumpConfig $False
+      - .\Get-ExchangeSecurityCollect.ps1 - Path "C:\ESC\output" -QuickMode $true
+      - .\Get-ExchangeSecurityCollect.ps1 - Path "C:\ESC\output" -DumpConfig $False -QuickMode $true
+      - .\Get-ExchangeSecurityCollect.ps1  -edge $true
     - For Help
-      - .\ GET-EXCHANGESECURITYINFO.PS1 -?
+      - .\ Get-ExchangeSecurityCollect.PS1 -?
 
 ## How to generate the Excel file
 To generate the Excel file :
@@ -66,9 +66,9 @@ To generate the Excel file :
       - $True if the script was run on an EDGE server
       - Default value : $False
 -Example : 
-    - .\New-ExchangeSecurityInfoReport.PS1
-    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESC\Output
-    - .\New-ExchangeSecurityInfoReport.PS1 -Path C:\ESC\Output -DumpConfig $False
+    - .\New-ExchangeSecurityCollectReport.PS1
+    - .\New-ExchangeSecurityCollectReport.PS1 -Path C:\ESC\Output
+    - .\New-ExchangeSecurityCollectReport.PS1 -Path C:\ESC\Output -DumpConfig $False
 
 ## How to Analyse the Excel File
 
