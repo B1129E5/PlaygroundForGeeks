@@ -13,7 +13,7 @@ The goal of this document is to give an "How to" for :
 ## Script Evolution
 This script has been moved and updated to free Sentinel Solutions named :  **Microsoft Exchange Security for Exchange On-Premises** and **Microsoft Exchange Security for Exchange Online**
 
-Beside the automatique collect, this solution provide workbooks that help automatically displayed configurations that can put your orgnization at risk.
+Beside the automatic collect, this solution provide workbooks that help automatically displayed configurations that can put your orgnization at risk.
 
 Here the link for information around these solutions :
 - [GitHub](https://aka.ms/MicrosoftExchangeSecurityGithub)
