@@ -10,7 +10,7 @@ The goal of this document is to give an "How to" for :
 - The explanation on how to analyze some security information collected by the script
 
 **There will be no more update for the script.**
-
+## Script Evolution
 This script has been moved and updated to free Sentinel Solutions named ! **Microsoft Exchange Security for Exchange On-Premises** and **Microsoft Exchange Security for Exchange Online**
 Here the link for information around these solutions :
 [GitHub](https://aka.ms/MicrosoftExchangeSecurityGithub)
