@@ -1,4 +1,11 @@
 # ESC
+
+- [ESC](#esc)
+  - [Script Evolution](#script-evolution)
+  - [How to collect](#how-to-collect)
+  - [How to generate the Excel file](#how-to-generate-the-excel-file)
+  - [How to Analyse the Excel File](#how-to-analyse-the-excel-file)
+
 Exchange Security Collect
 Script to collect Security information for Exchange OnPremises organization
 This project was renamed the 09/11/2022 from ESI - Exchange Security Information to ESC - Exchange Security Collect
